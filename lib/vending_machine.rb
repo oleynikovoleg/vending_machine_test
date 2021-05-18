@@ -30,7 +30,7 @@ class VendingMachine
   def find_item
     unless @item = storage.find_item(gets.chomp)
       Console.item_error
-      return execute
+      execute
     end
   end
 
@@ -63,7 +63,7 @@ class VendingMachine
     redundant = total - item.price
     change = []
 
-    while redundant > 0
+    while redundant.positive?
       coin = vault.find_coin_for_change(redundant)
       if coin
         change << coin.value

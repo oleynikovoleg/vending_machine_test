@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml'
 require 'singleton'
 
@@ -19,7 +21,7 @@ class Vault
   end
 
   def find_coin_for_change(value)
-    coin = @coins.select { |coin| coin.quantity.positive? }.min_by{ |x| (value - x.value).abs }
+    coin = coins.select { |coin| coin.quantity.positive? }.min_by { |x| (value - x.value).abs }
     coin && coin.value > value ? nil : coin
   end
 

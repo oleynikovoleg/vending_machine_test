@@ -14,6 +14,7 @@ class Console
       puts '-' * DIVIDER_SIZE
       items.each do |item|
         next if item.quantity.zero?
+
         puts formatted_string(item.code.to_s, item.name, "#{item.price}$", item.quantity.to_s)
       end
       puts '-' * DIVIDER_SIZE
@@ -22,7 +23,7 @@ class Console
 
     def item_error
       puts 'I don\'t have items with this code.'.red
-      puts  'Please use correct one.'.red
+      puts 'Please use correct one.'.red
     end
 
     def insert_coin_message
