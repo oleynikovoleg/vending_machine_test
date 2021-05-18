@@ -6,7 +6,7 @@ require_relative '../lib/storage'
 RSpec.describe Storage do
   subject { described_class.instance.find_item(code) }
 
-  let(:items_list) { YAML.load_file('./items.yml') }
+  let(:items_list) { YAML.load_file('./data/items.yml') }
   let(:item) { ->(attr_name) { items_list.first[attr_name] } }
   let(:code) { item['code'] }
   let(:correct_attributes) do

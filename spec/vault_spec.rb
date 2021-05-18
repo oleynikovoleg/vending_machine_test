@@ -4,7 +4,7 @@ require 'yaml'
 require_relative '../lib/vault'
 
 RSpec.describe Vault do
-  let(:coins_list) { YAML.load_file('./coins.yml') }
+  let(:coins_list) { YAML.load_file('./data/coins.yml') }
   let(:coin) { ->(attr_name) { coins_list.last[attr_name] } }
   let(:correct_attributes) do
     {

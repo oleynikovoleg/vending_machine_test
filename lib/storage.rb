@@ -9,7 +9,7 @@ class Storage
   attr_accessor :items
 
   def initialize
-    @items = YAML.load_file('./items.yml').map do |item|
+    @items = YAML.load_file('./data/items.yml').map do |item|
       Item.new(item['name'], item['code'], item['price'], item['quantity'])
     end
   end

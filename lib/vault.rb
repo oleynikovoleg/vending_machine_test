@@ -9,7 +9,7 @@ class Vault
   attr_accessor :coins
 
   def initialize
-    @coins = YAML.load_file('./coins.yml').map do |coin|
+    @coins = YAML.load_file('./data/coins.yml').map do |coin|
       Coin.new(coin['name'], coin['value'], coin['quantity'])
     end
   end
